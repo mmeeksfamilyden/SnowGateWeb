@@ -1,0 +1,649 @@
+@font-face {
+    font-family: 'HelveticaNeueEx';
+    src: url('../fonts/helveticaneueltex-webfont.eot?') format('eot'),
+         url('../fonts/helveticaneueltex-webfont.woff') format('woff'),
+         url('../fonts/helveticaneueltex-webfont.ttf') format('truetype'),
+         url('../fonts/helveticaneueltex-webfont.svg#webfontOlwweK5w') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+	font-family: 'HelveticaNeueIt';
+	src: url('../fonts/HelveticaNeueLTPro It.eot');
+	src: local('☺'), url('../fonts/HelveticaNeueLTPro It.woff') format('woff'), url('../fonts/HelveticaNeueLTPro It.ttf') format('truetype'), url('../fonts/HelveticaNeueLTPro It.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'HelveticaNeue';
+	src: url('../fonts/HelveticaNeueLTPro Roman.eot');
+	src: local('☺'), url('../fonts/HelveticaNeueLTPro Roman.woff') format('woff'), url('../fonts/HelveticaNeueLTPro Roman.ttf') format('truetype'), url('../fonts/HelveticaNeueLTPro Roman.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'HelveticaNeueLt';
+	src: url('../fonts/HelveticaNeueLTPro Lt.eot');
+	src: local('☺'), url('../fonts/HelveticaNeueLTPro Lt.woff') format('woff'), url('../fonts/HelveticaNeueLTPro Lt.ttf') format('truetype'), url('../fonts/HelveticaNeueLTPro Lt.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+
+
+// Global Foundation Settings
+@import "settings";
+
+// Comment out this import if you don't want to use normalize
+@import "normalize";
+
+// Comment out this import if you are customizing you imports below
+//@import "foundation";
+
+// Import specific parts of Foundation by commenting the import "foundation"
+// and uncommenting what you want below. You must uncomment the following if customizing
+
+@import "foundation/components/global"; // *always required
+@import "foundation/components/grid";
+
+//
+// Use this grid if you want to start using the new Foundation 5 grid early.
+// It will change breakpoints to min-width: 640px and 1024px.
+//
+// @import "foundation/components/grid-5";
+//
+@import "foundation/variables";
+@import "foundation/components/visibility";
+@import "foundation/components/block-grid";
+// @import "foundation/components/type";
+@import "foundation/components/buttons";
+@import "foundation/components/forms"; // *requires components/buttons
+@import "foundation/components/custom-forms"; // *requires components/buttons, components/forms
+// @import "foundation/components/button-groups"; // *requires components/buttons
+@import "foundation/components/dropdown-buttons"; // *requires components/buttons
+// @import "foundation/components/split-buttons"; // *requires components/buttons
+// @import "foundation/components/flex-video";
+@import "foundation/components/section";
+@import "foundation/components/top-bar";  // *requires components/grid
+@import "foundation/components/orbit";
+@import "foundation/components/reveal";
+// @import "foundation/components/joyride";
+// @import "foundation/components/clearing";
+@import "foundation/components/alert-boxes";
+// @import "foundation/components/breadcrumbs";
+// @import "foundation/components/keystrokes";
+// @import "foundation/components/labels";
+// @import "foundation/components/inline-lists";
+// @import "foundation/components/pagination";
+@import "foundation/components/panels";
+// @import "foundation/components/pricing-tables";
+// @import "foundation/components/progress-bars";
+// @import "foundation/components/side-nav";
+// @import "foundation/components/sub-nav";
+// @import "foundation/components/switch";
+// @import "foundation/components/magellan";
+@import "foundation/components/tables";
+// @import "foundation/components/thumbs";
+// @import "foundation/components/tooltips";
+@import "foundation/components/dropdown";
+@import "foundation/components/dropdown";
+
+
+$blue: #008cc9;
+$gray: #222222;
+$lightBlue: #d1e4f1;
+$white: #fff;
+$grayText: #444444;
+$lightGray: #888888;
+
+$fontStack: "HelveticaNeue","Helvetica Neue","Helvetica",Helvetica,Arial,sans-serif;
+$fontStackLight: "HelveticaNeueLt","Helvetica Neue Light","Helvetica",Helvetica,Arial,sans-serif;
+$fontStackWide: "HelveticaNeueEx","Helvetica Neue Extended","Helvetica",Helvetica,Arial,sans-serif;
+$fontStackItalic: "HelveticaNeueIt","Helvetica Neue Italic","Helvetica",Helvetica,Arial,sans-serif;
+
+@font-face {
+font-family: '[set]Foundicons';
+src: url('../fonts/[set]_foundicons.eot');
+src: url('../fonts/[set]_foundicons.eot?#iefix') format('embedded-opentype'),
+url('../fonts/[set]_foundicons.woff') format('woff'),
+url('../fonts/[set]_foundicons.ttf') format('truetype'),
+url('../fonts/[set]_foundicons.svg#[set]Foundicons') format('svg');
+font-weight: normal;
+font-style: normal;
+}
+ 
+[class*="foundicon-"] {
+display: inline;
+width: auto;
+height: auto;
+line-height: inherit;
+vertical-align: baseline;
+background-image: none;
+background-position: 0 0;
+background-repeat: repeat;
+}
+ 
+[class*="foundicon-"]:before {
+font-family: "[set]Foundicons";
+font-weight: normal;
+font-style: normal;
+text-decoration: inherit;
+}
+
+
+html {
+	height: 100%;
+	background: url(../images/snowGateBg.png);
+}
+body {
+	background: url(../images/snowGateBg.png);
+	color: $gray;
+	cursor: default;
+	font-family: $fontStack;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1.5;
+	position: static;
+	height: auto;
+	padding-bottom: 60px;
+}
+a {
+	color: $blue;
+	text-decoration: none;
+	
+	&:hover {
+		color: darken($blue,10%);
+	}
+}
+#wrapper {
+	position: relative;
+	margin-bottom: 60px;
+}
+h2 {
+	font-weight: normal;
+	font-family: $fontStackLight;
+	margin-bottom: 0;
+}
+.clearFix {
+	clear: both;
+}
+.row {
+	background: $white;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0;
+	margin-bottom: 0;
+	max-width: 1280px;
+	*zoom: 1;
+}
+
+#topBar {
+	background: $blue;
+	height: 24px;
+	color: $white;
+	
+	ul {
+		margin: 0;
+		padding: 0;
+		display: block;
+		float: right;
+		
+		li {
+			margin: 0 24px;
+			padding: 0;
+			list-style: none;
+			display: inline-block;
+			height: 24px;
+			line-height: 24px;
+			vertical-align: middle;
+			font-family: $fontStackLight;
+			font-size: 16px;
+			
+			a {
+				color: $lightBlue;
+				text-decoration: none;
+				
+				&:hover {
+					color: $white;
+				}
+			}
+		}
+	}
+}
+header {
+	padding: 36px 0;
+	height: 42px;
+	
+	> div {
+		clear: both;
+	}
+	
+	nav {
+		float: right;
+		
+		ul {
+			display: block;
+			float: right;
+			height: 42px;
+			
+			li {
+				font-size: 24px;
+				display: block;
+				float: right;
+				list-style: none;
+				font-family: $fontStackLight;
+				margin-left: 120px;
+				
+				a {
+					color: $gray;
+					text-decoration: none;
+					
+					&:hover {
+						color: lighten($gray, 30%);
+					}
+				}
+			}
+		}
+	}
+}
+.orbit-container {
+	.orbit-slides-container {
+		> {
+			* {
+				.orbit-caption {
+					background-color: rgba(0, 0, 0, 0.3);
+					height: 100%;
+					top: 0;
+					right: 0;
+					bottom: 0;
+					color: $white;
+					font-size: 3em;
+					padding: 60px 34px 10px 14px;
+					position: absolute;
+					width: 33%;
+					font-family: $fontStackLight;
+					vertical-align: middle;
+					line-height: 1.5;
+				}
+			}
+		}
+	}
+}
+.slideshow-wrapper ul {
+    list-style-type: none;
+    margin: 0;
+	padding: 0;
+}
+#firstSection {
+	padding-top: 30px;
+	height: 300px;
+	position: relative;
+	
+	.introText {
+		p {
+			font-size: 24px;
+			line-height: 1.5;
+			color: $grayText;
+			margin-top: 0;
+		}
+	}
+		
+	#findLockers.panel {
+		background: $blue;
+		color: $white;
+		font-family: $fontStackWide;
+		padding: 14px 14px 40px 14px;
+		border: 0;
+		border-radius: 5px;
+		height: 30px;
+		
+		p {
+			width: 50%;
+			float: left;
+			color: $white;
+			font-size: 24px;
+			margin-bottom: 0;
+	
+		}
+		
+		#resortsDropButton {
+			font-family: $fontStackLight;
+			font-size: 16px;
+			font-weight: normal;
+			margin-bottom: 0;
+			float: right;
+		}
+	}
+}
+.cf { 
+	zoom: 1; 
+}
+.cf:before,
+.cf:after { 
+	content: ""; 
+	display: table; 
+}
+.cf:after { 
+	clear: both; 
+}
+#connectWithUs {
+	margin-top: 30px;
+	
+	p {
+		margin: 0;
+	}
+}
+#topSlider {
+	padding: 0;
+	height: 300px;
+	position: relative;
+	width: 100%;
+}
+#secondSection {
+	background: url(../images/sectionTwoBg.jpg) center center no-repeat; 
+	padding: 0;
+	height: 374px;
+	position: relative;
+	width: 100%;
+}
+#thirdSection {
+	height: 374px;
+	position: relative;
+	width: 100%;
+}
+#fourthSection {
+	background: url(../images/sectionFourBg.jpg) center center no-repeat; 
+	padding: 0;
+	height: 374px;
+	position: relative;
+	width: 100%;
+}
+.story{
+	color: $white;
+	font-size: 2.5em;
+	padding: 60px 34px 10px 14px;
+	font-family: $fontStackLight;
+	vertical-align: middle;
+	line-height: 1.5;
+	text-align: left;
+}
+
+.testimonialHeader {
+	
+	h3 {
+		font-family: $fontStackLight;
+		color: $blue;
+		font-size: 3em;
+		font-weight: 300;
+	}
+}
+.testimonialBody {
+	padding-top: 20px;
+	
+	#testimonials {
+		
+		p {
+			font-family: $fontStackItalic;
+			font-size: 1.5em;
+			font-weight: 300;
+			color: $gray;
+			line-height: 1.8;
+			
+			&.testimonialName{
+				color: lighten($grayText, 10%);
+			}
+		}
+	}
+}
+.subnav {
+	margin-bottom: 30px !important;
+	
+	.title-area {
+		display: none;
+	}
+	.top-bar-section {
+		ul {
+			background: transparent;
+			display: block;
+			height: auto;
+			margin: 0;
+			width: 100%;
+			padding: 0;	
+			
+			li {
+				width: 25%;
+				text-align: center;
+				vertical-align: middle;
+				line-height: 28px;
+				font-family: $fontStack;
+				font-weight: normal;
+				padding-top: 4px;
+				height: 28px;
+				
+				a {
+					text-decoration: none;
+					text-transform: uppercase;
+					font-weight: normal;
+					color: $white;
+					
+					&:hover {
+						color: darken($white, 20%);
+					}
+				}
+			}
+		}
+}
+}
+
+table {
+	width: 100%;
+	
+	tr {
+		border-bottom: 1px solid lighten($lightGray, 30%);
+	}
+	
+	thead {
+		
+		tr {
+			
+			th {
+				color: $blue;
+				font-size: 1.1em;
+				vertical-align: middle;
+			}
+		}
+	}
+	
+	tbody {
+		
+		tr {
+			
+			&.inUse {
+				td {
+					color: lighten($gray,50%);
+				}
+			}
+			td {
+				font-size: 1em;
+			}
+		}
+	}
+	
+	&.history {
+		
+		tr {
+			td {
+				&:nth-child(1) {
+					width: 5%;
+					text-align: center;
+				}
+				&:nth-child(2) {
+					width: 45%;
+				}
+				&:nth-child(3) {
+					width: 25%;
+				}
+				&:nth-child(4) {
+					width: 25%;
+				}
+			}
+		}
+	}
+	
+	&.userProfiles{
+		tr {	
+			td {
+				&:nth-child(1) {
+					width: 20%;
+				}
+				&:nth-child(2) {
+					width: 20%;
+				}
+				&:nth-child(3) {
+					width: 20%;
+				}
+				&:nth-child(4) {
+					width: 20%;
+				}
+				&:nth-child(5) {
+					width: 20%;
+				}
+			}
+		}
+	}
+	
+	&.active {
+		tr {	
+			td {
+				&:nth-child(1) {
+					width: 5%;
+					text-align: center;
+				}
+				&:nth-child(2) {
+					width: 30%;
+				}
+				&:nth-child(3) {
+					width: 15%;
+				}
+				&:nth-child(4) {
+					width: 15%;
+				}
+				&:nth-child(5) {
+					width: 15%;
+				}
+				&:nth-child(6) {
+					width: 20%;
+				}
+			}
+		}
+		
+	}
+	
+	&.profile {
+		width: 50%;
+		tr {
+			border-bottom: 1px solid lighten($lightGray, 20%);
+			
+			&:last-child {
+				border-bottom: 0;
+			}
+			
+			td {
+				&:nth-child(1) {
+					width: 50%;
+					text-align: left;
+				}
+				&:nth-child(2) {
+					width: 50%;
+				}
+				
+			}
+		}
+		
+	}
+	
+}
+h1 {
+	font-weight: normal;
+	font-family: $fontStackLight;
+	font-size: 30px;
+}
+h2 {
+	font-weight: normal;
+	font-family: $fontStackLight;
+	font-size: 18px;
+	color: $blue;
+}
+.bios {
+	margin: 10px;
+	
+	li {
+		/*background: lighten($lightGray, 43%);*/
+		padding-bottom: 2.5em;
+		padding-top: 2.5em;
+	
+		img {
+			text-align: center;
+			margin: 0 auto;
+		}
+	}
+}
+.intro p {
+	font-size: 1.25em;
+}
+
+
+/* Button Options */
+.sgButton {
+  @include button($bg:$blue);
+  margin-right: 12px;
+  vertical-align: middle;
+  padding: emCalc(12);
+}
+
+.f-dropdown {
+    padding: 0;
+	
+	a {
+		text-decoration: none;
+		font-size: 1.1em;
+	}
+}
+.custom {
+	label {
+		font-size: 1.1em;
+	}
+}
+.center {
+	text-align: center;
+	
+	a.button {
+		margin: 0 15px;
+	}
+}
+.topBarIcon {
+	font-size: 0.8em;
+	display: inline-block;
+	margin-right: 6px;
+}
+
+.ui-widget {
+    font-family: $fontStack;
+    font-size: 1.1em;
+}
+.ui-widget-header {
+	font-weight: normal;
+}
+.ui-datepicker th {
+    font-weight: normal;
+}
+.totalLabel {
+	text-align: right;
+}
+form.custom .custom.radio {
+    margin-right: 6px;
+}
